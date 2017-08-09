@@ -1,14 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController,AlertController  } from 'ionic-angular';
+import {DetailsPage} from '../details/details';
+import {NewsApiGlobal} from '../../models/newsapi-global.model';
+import {NewsApiService} from '../../services/newsapi.service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController,public alertCtrl: AlertController) {
-  		console.log('constructeur');
+  nom:string;
+  prenom:string;
+  adress:string;
+  age:number;
+  news:NewsApiGlobal = new NewsApiGlobal();// initialisation
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController,private NewsApiService:NewsApiService) {
+      console.log('constructeur');
+      this.NewsApiService.getArticles()
+      .then(newFetched=>{
+        this.news = newFetched;
+        console.log(this.news);
+      });
+      
   }
   alertAction():void{
   	console.log('bouton');
@@ -18,5 +31,15 @@ export class HomePage {
       buttons: ['OK']
     });
     alert.present();
+  }
+
+  private showDetails():void{ 
+    var tab = {
+      nom:this.nom,
+      prenom:this.prenom,
+      adress:this.adress,
+      age:this.age
+    };
+    this.navCtrl.push(DetailsPage,tab );
   }
 }

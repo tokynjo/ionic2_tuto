@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content >
   <h3>Ionic Menu Starter</h3>
 
   <p>
@@ -17,4 +17,34 @@
   <button ion-button secondary menuToggle>Toggle Menu</button>
 
   <button (tap)="alertAction()" ion-button   full>test</button>
+  <ion-item>
+    <ion-label color="primary" floating>Nom :</ion-label>
+    <ion-input [(ngModel)]="nom"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Prenom :</ion-label>
+    <ion-input [(ngModel)]="prenom"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Adress :</ion-label>
+    <ion-input [(ngModel)]="adress"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" placeholder="Votre age" [(ngModel)]="age"></ion-input>
+  </ion-item>
+  <button id="presentButton" ion-button large (tap)="showDetails()">Enregistrer</button>
+  
+  <ion-card *ngFor='let article of news.articles'>
+  <img [src]="article.urlToImage"/>
+  <ion-card-content>
+    <ion-card-title>
+       {{article.title}}
+      </ion-card-title>
+    <p>
+      {{article.description}}
+    </p>
+  </ion-card-content>
+</ion-card>
+
+
 </ion-content>
