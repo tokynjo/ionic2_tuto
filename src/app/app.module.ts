@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { StoragePage } from '../pages/storage/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -12,12 +13,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DetailsPage } from '../pages/details/details';
 import {NewsApiService} from '../services/newsapi.service';
 import {HttpModule} from '@angular/http';
+
+//-----------native storage ----------------------------
+import { NativeStorage } from '@ionic-native/native-storage';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    DetailsPage
+    DetailsPage,
+    StoragePage
   ],
   imports: [
     HttpModule,
@@ -29,9 +35,11 @@ import {HttpModule} from '@angular/http';
     MyApp,
     HomePage,
     ListPage,
-    DetailsPage
+    DetailsPage,
+    StoragePage
   ],
   providers: [
+    NativeStorage,
     NewsApiService,
     StatusBar,
     SplashScreen,

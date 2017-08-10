@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Storage Native</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+   <ion-item>
+    <ion-label color="primary" floating>Nom :</ion-label>
+    <ion-input [(ngModel)]="nom"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Prenom :</ion-label>
+    <ion-input [(ngModel)]="prenom"></ion-input>
+  </ion-item>
+   
+  <ion-item>
+    <ion-input type="number" placeholder="Votre age" [(ngModel)]="age"></ion-input>
+  </ion-item>
+  <button id="presentButton" ion-button large (tap)="storeIdentity()">Enregistrer</button>
+  <button id="presentButton" ion-button large (tap)="getMyName()">C4est quoi mon nom</button>
+</ion-content>
