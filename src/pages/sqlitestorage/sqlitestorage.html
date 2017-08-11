@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Storage SQLITE </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+   <ion-list>
+     <ion-item>
+       <ion-label *ngFor="let movie of movies" fixed >{{movie}}</ion-label>
+     </ion-item>
+   </ion-list> 
+    <button ion-button clear (tap)="retriveFilm()"> get film liste </button>
+</ion-content>

@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { StoragePage } from '../pages/storage/storage';
+import { SqliteStoragePage } from '../pages/sqlitestorage/sqlitestorage';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +26,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      {title:'Storage',component:StoragePage}
+      {title:'Storage',component:StoragePage},
+      {title:'Sqlite storage',component: SqliteStoragePage}
     ];
 
   }

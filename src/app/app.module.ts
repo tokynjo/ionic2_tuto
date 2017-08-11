@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { StoragePage } from '../pages/storage/storage';
+import { SqliteStoragePage } from '../pages/sqlitestorage/sqlitestorage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,6 +17,7 @@ import {HttpModule} from '@angular/http';
 
 //-----------native storage ----------------------------
 import { NativeStorage } from '@ionic-native/native-storage';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
     HomePage,
     ListPage,
     DetailsPage,
-    StoragePage
+    StoragePage,
+    SqliteStoragePage
   ],
   imports: [
     HttpModule,
@@ -36,10 +39,12 @@ import { NativeStorage } from '@ionic-native/native-storage';
     HomePage,
     ListPage,
     DetailsPage,
-    StoragePage
+    StoragePage,
+    SqliteStoragePage
   ],
   providers: [
     NativeStorage,
+    SQLite,
     NewsApiService,
     StatusBar,
     SplashScreen,
