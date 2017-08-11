@@ -1,0 +1,20 @@
+Pourquoi API (web servcive)
+interaction avec des base de données.
+
+url de base/enPoint/parameter
+
+api key  9b08ed813a40448abc93d4a3adae3dae
+
+---------------------------------*------------------------
+stocker les données
+1- nativeStorage : stocker varialble
+2- slqlite :données stucturé
+
+
+--------------------------------utilisattion storage native 
+installation
+#ionic cordova plugin add cordova-plugin-nativestorage
+#npm install --save @ionic-native/native-storage
+--------------------------------utilisation sqlite------
+$ ionic cordova plugin add cordova-sqlite-storage     *****si ca marche pas:enlever cordova
+$ npm install --save @ionic-native/sqlite
