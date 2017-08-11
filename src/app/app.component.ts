@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Component, ViewChild ,ErrorHandler, NgModule} from '@angular/core';
+import { Nav, Platform, IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -8,14 +8,17 @@ import { ListPage } from '../pages/list/list';
 import { StoragePage } from '../pages/storage/storage';
 import { SqliteStoragePage } from '../pages/sqlitestorage/sqlitestorage';
 
+// login -----------------
+import { AuthServiceProvider } from './../providers/auth-service/auth-service';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = HomePage;
+  rootPage:any = 'LoginPage';
+  //rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 

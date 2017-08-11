@@ -18,7 +18,8 @@ import {HttpModule} from '@angular/http';
 //-----------native storage ----------------------------
 import { NativeStorage } from '@ionic-native/native-storage';
 import { SQLite } from '@ionic-native/sqlite';
-
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+// login -----------------
 @NgModule({
   declarations: [
     MyApp,
@@ -48,7 +49,8 @@ import { SQLite } from '@ionic-native/sqlite';
     NewsApiService,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
