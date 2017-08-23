@@ -19,16 +19,16 @@ export class HomePage {
   username = '';
   email = '';
   constructor(private auth: AuthServiceProvider, public navCtrl: NavController, public alertCtrl: AlertController, private NewsApiService: NewsApiService) {
-    console.log('constructeur');
+    console.log('home');
     this.NewsApiService.getArticles()
       .then(newFetched => {
         this.news = newFetched;
         console.log(this.news);
       });
     //----login--------
-    let info = this.auth.getUserInfo();
+    /*let info = this.auth.getUserInfo();
     this.username = info['name'];
-    this.email = info['email'];
+    this.email = info['email'];*/
   }
   alertAction(): void {
     console.log('bouton');

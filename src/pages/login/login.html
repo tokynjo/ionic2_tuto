@@ -1,12 +1,13 @@
 
-<ion-content class="login-content" padding>
-  <ion-row class="logo-row">
-    <ion-col></ion-col>
-    <ion-col width-67>
-      <img src="http://placehold.it/300x200"/>
-    </ion-col>
-    <ion-col></ion-col>
-  </ion-row>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/icon/logo.png" style="margin-left:26%;width:50%;height: 3%" />
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="login-content" padding style="background-image: url(assets/icon/layout.png)">
+  <h3 style="color:#FFF;text-align:center;margin-top:10px">Login</h3>
   <div class="login-box">
     <form (ngSubmit)="login()" #registerForm="ngForm">
       <ion-row>

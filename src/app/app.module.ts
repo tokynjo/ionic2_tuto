@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { StoragePage } from '../pages/storage/storage';
 import { SqliteStoragePage } from '../pages/sqlitestorage/sqlitestorage';
+import { AccueilPage } from '../pages/accueil/accueil';
+import { ReportPage } from '../pages/report/report';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +29,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ListPage,
     DetailsPage,
     StoragePage,
-    SqliteStoragePage
+    SqliteStoragePage,
+    AccueilPage,
+    ReportPage
   ],
   imports: [
     HttpModule,
@@ -41,7 +45,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ListPage,
     DetailsPage,
     StoragePage,
-    SqliteStoragePage
+    SqliteStoragePage,
+    AccueilPage,
+    ReportPage
   ],
   providers: [
     NativeStorage,
