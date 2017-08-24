@@ -21,6 +21,8 @@ import {HttpModule} from '@angular/http';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { SQLite } from '@ionic-native/sqlite';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import {ReportDetailPage} from '../pages/reportdetail/reportdetail';
+import {LoginPage} from '../pages/login/login';
 // login -----------------
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StoragePage,
     SqliteStoragePage,
     AccueilPage,
-    ReportPage
+    ReportPage,
+    ReportDetailPage,
+    LoginPage
   ],
   imports: [
     HttpModule,
@@ -47,7 +51,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StoragePage,
     SqliteStoragePage,
     AccueilPage,
-    ReportPage
+    ReportPage,
+    ReportDetailPage,LoginPage
   ],
   providers: [
     NativeStorage,

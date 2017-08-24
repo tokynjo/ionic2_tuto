@@ -38,9 +38,11 @@ export class AuthServiceProvider {
             .map((response: Response) => {
       // login successful if there's a jwt token in the response
       let user = response.json();
-      if (user && user.token) {
+      if (user && user.access_token) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('token', user.access_token);
+        localStorage.setItem('refresh_token', user.refresh_token);
       }
     });
     /*if (credentials.email === null || credentials.password === null) {
@@ -96,7 +98,17 @@ export class AuthServiceProvider {
       .then(response => console.log(response.json()))
       .catch(error => console.log('Une erreur est survenue ' + error))
   }
-  getUser() {
-
+   getReport(){
+    var token = localStorage.getItem('token');
+    console.log(token);
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `Bearer ${token}`);
+    headers.append('Accept', 'application/json');
+    const url = `${this.baseUrl}api/report`;
+    return this.http.post(url, null,{
+      headers:headers
+    })
+            .map(res=> res.json());
   }
 }

@@ -83,6 +83,11 @@
     <p style="color:#FFF">
       Cette rubrique vous permet d’accéder à vos anciens rapports sauvegardés.
     </p>
+    <div style="background-color: #FFF">
+      <p *ngFor='let l of liste' style="margin: 0px 1px"> 
+        <button class="button" (tap)="afficherDetails(l.id)">* Rapport {{l.nom}} <span style="background: #34A853;color:#FFF">status</span></button>
+      </p>
+    </div>
     <button class="" full type="submit" style="background-color: #FFF;padding:10px;color:#000">RECUPERER MES RAPPORTS</button> 
   </div>
   </div>

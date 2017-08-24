@@ -10,6 +10,8 @@ import { StoragePage } from '../pages/storage/storage';
 import { ReportPage } from '../pages/report/report';
 import { SqliteStoragePage } from '../pages/sqlitestorage/sqlitestorage';
 
+import {ReportDetailPage} from '../pages/reportdetail/reportdetail';
+
 // login -----------------
 import { AuthServiceProvider } from './../providers/auth-service/auth-service';
 import { BrowserModule } from '@angular/platform-browser';

@@ -3,6 +3,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import { NewsApiGlobal } from '../../models/newsapi-global.model';
 import { NewsApiService } from '../../services/newsapi.service';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import {LoginPage} from '../../pages/login/login';
 @Component({
   selector: 'page-accueil',
   templateUrl: 'accueil.html'
@@ -27,7 +28,7 @@ export class AccueilPage {
   }
   modalLogin() {
      
-    this.navCtrl.push('LoginPage');
+    this.navCtrl.setRoot(LoginPage);
   
   }
    
